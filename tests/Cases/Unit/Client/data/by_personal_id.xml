@@ -1,0 +1,28 @@
+<root>
+	<data>
+		<rc>661227/1234</rc>
+		<cisloSenatu>41</cisloSenatu>
+		<druhVec>INS</druhVec>
+		<bcVec>17502</bcVec>
+		<rocnik>2012</rocnik>
+		<nazevOrganizace>Krajský soud v Praze</nazevOrganizace>
+		<datumNarozeni>1966-12-27Z</datumNarozeni>
+		<jmeno>Josef</jmeno>
+		<nazevOsoby>Bolvan</nazevOsoby>
+		<druhAdresy>TRVALÁ</druhAdresy>
+		<mesto>Zbyslav</mesto>
+		<ulice>Havlíčkova</ulice>
+		<cisloPopisne>53</cisloPopisne>
+		<psc>286 01</psc>
+		<druhStavKonkursu>ODSKRTNUTA</druhStavKonkursu>
+		<urlDetailRizeni>
+			https://isir.justice.cz/isir/ueu/evidence_upadcu_detail.do?id=10f7f986-7a9c-47ab-949d-5e9d60a77bc1
+		</urlDetailRizeni>
+		<dalsiDluznikVRizeni>F</dalsiDluznikVRizeni>
+	</data>
+	<stav>
+		<pocetVysledku>1</pocetVysledku>
+		<relevanceVysledku>1</relevanceVysledku>
+		<casSynchronizace>2019-01-11T12:12:00.000Z</casSynchronizace>
+	</stav>
+</root>

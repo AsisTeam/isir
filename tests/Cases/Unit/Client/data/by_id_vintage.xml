@@ -1,0 +1,28 @@
+<root>
+	<data>
+		<rc>850117/4770</rc>
+		<cisloSenatu>37</cisloSenatu>
+		<druhVec>INS</druhVec>
+		<bcVec>17712</bcVec>
+		<rocnik>2017</rocnik>
+		<nazevOrganizace>Krajský soud v Brně</nazevOrganizace>
+		<datumNarozeni>1985-01-17Z</datumNarozeni>
+		<jmeno>Tomáš</jmeno>
+		<nazevOsoby>Sedláček</nazevOsoby>
+		<druhAdresy>TRVALÁ</druhAdresy>
+		<mesto>Dobronín</mesto>
+		<ulice>U Staré školy</ulice>
+		<cisloPopisne>217</cisloPopisne>
+		<psc>588 12</psc>
+		<druhStavKonkursu>ODDLUŽENÍ</druhStavKonkursu>
+		<urlDetailRizeni>
+			https://isir.justice.cz/isir/ueu/evidence_upadcu_detail.do?id=2985123F112C4FACA50454B133778EC1
+		</urlDetailRizeni>
+		<dalsiDluznikVRizeni>F</dalsiDluznikVRizeni>
+	</data>
+	<stav>
+		<pocetVysledku>1</pocetVysledku>
+		<relevanceVysledku>3</relevanceVysledku>
+		<casSynchronizace>2019-01-11T15:12:15.000Z</casSynchronizace>
+	</stav>
+</root>

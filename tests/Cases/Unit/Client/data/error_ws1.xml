@@ -1,0 +1,7 @@
+<root>
+	<stav>
+		<kodChyby>WS1</kodChyby>
+		<textChyby>Nesprávná kombinace parametrů</textChyby>
+		<popisChyby>Kontrola na správnost vyplnění parametrů neproběhla v pořádku - nesprávná kombinace parametrů</popisChyby>
+	</stav>
+</root>

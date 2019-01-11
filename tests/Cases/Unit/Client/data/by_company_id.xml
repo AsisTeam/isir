@@ -1,0 +1,26 @@
+<root>
+	<data>
+		<ic>27680339</ic>
+		<cisloSenatu>40</cisloSenatu>
+		<druhVec>INS</druhVec>
+		<bcVec>11095</bcVec>
+		<rocnik>2018</rocnik>
+		<nazevOrganizace>Krajský soud v Brně</nazevOrganizace>
+		<nazevOsoby>SCF SERVIS, s.r.o.</nazevOsoby>
+		<druhAdresy>SÍDLO FY</druhAdresy>
+		<mesto>Holasice</mesto>
+		<ulice>J. Fučíka</ulice>
+		<cisloPopisne>308</cisloPopisne>
+		<psc>664 61</psc>
+		<druhStavKonkursu>REORGANIZ</druhStavKonkursu>
+		<urlDetailRizeni>
+			https://isir.justice.cz/isir/ueu/evidence_upadcu_detail.do?id=191D6BD8A42848B2BA4E79FAA699C3CF
+		</urlDetailRizeni>
+		<dalsiDluznikVRizeni>F</dalsiDluznikVRizeni>
+	</data>
+	<stav>
+		<pocetVysledku>1</pocetVysledku>
+		<relevanceVysledku>2</relevanceVysledku>
+		<casSynchronizace>2019-01-11T08:11:39.000Z</casSynchronizace>
+	</stav>
+</root>

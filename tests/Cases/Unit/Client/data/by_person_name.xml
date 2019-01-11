@@ -1,0 +1,205 @@
+<root>
+	<data>
+		<rc>831127/3377</rc>
+		<cisloSenatu>40</cisloSenatu>
+		<druhVec>INS</druhVec>
+		<bcVec>20528</bcVec>
+		<rocnik>2014</rocnik>
+		<nazevOrganizace>Krajský soud v Hradci Králové</nazevOrganizace>
+		<datumNarozeni>1983-11-27Z</datumNarozeni>
+		<jmeno>Tomáš</jmeno>
+		<nazevOsoby>Sedláček</nazevOsoby>
+		<druhAdresy>TRVALÁ</druhAdresy>
+		<mesto>Liberk</mesto>
+		<ulice>Liberk</ulice>
+		<cisloPopisne>70</cisloPopisne>
+		<okres>Rychnov nad Kněžnou</okres>
+		<psc>517 12</psc>
+		<druhStavKonkursu>ODDLUŽENÍ</druhStavKonkursu>
+		<urlDetailRizeni>
+			https://isir.justice.cz/isir/ueu/evidence_upadcu_detail.do?id=a5126703-b622-49a4-8b34-1ad80472f8da
+		</urlDetailRizeni>
+		<dalsiDluznikVRizeni>F</dalsiDluznikVRizeni>
+	</data>
+	<data>
+		<rc>750606/5446</rc>
+		<cisloSenatu>14</cisloSenatu>
+		<druhVec>INS</druhVec>
+		<bcVec>32739</bcVec>
+		<rocnik>2014</rocnik>
+		<nazevOrganizace>Krajský soud v Ostravě</nazevOrganizace>
+		<datumNarozeni>1975-06-06Z</datumNarozeni>
+		<jmeno>Tomáš</jmeno>
+		<nazevOsoby>Sedláček</nazevOsoby>
+		<druhAdresy>TRVALÁ</druhAdresy>
+		<mesto>Hlučín</mesto>
+		<ulice>Dělnická</ulice>
+		<cisloPopisne>1578/34</cisloPopisne>
+		<psc>748 01</psc>
+		<druhStavKonkursu>ODDLUŽENÍ</druhStavKonkursu>
+		<urlDetailRizeni>
+			https://isir.justice.cz/isir/ueu/evidence_upadcu_detail.do?id=a1232d7c-7d72-429b-9039-6f715489c284
+		</urlDetailRizeni>
+		<dalsiDluznikVRizeni>F</dalsiDluznikVRizeni>
+	</data>
+	<data>
+		<ic>73793159</ic>
+		<rc>805728/5599</rc>
+		<cisloSenatu>14</cisloSenatu>
+		<druhVec>INS</druhVec>
+		<bcVec>32739</bcVec>
+		<rocnik>2014</rocnik>
+		<nazevOrganizace>Krajský soud v Ostravě</nazevOrganizace>
+		<datumNarozeni>1980-07-28Z</datumNarozeni>
+		<jmeno>Petra</jmeno>
+		<nazevOsoby>Sedláčková</nazevOsoby>
+		<druhAdresy>SÍDLO FY</druhAdresy>
+		<mesto>Hlučín</mesto>
+		<ulice>Dělnická</ulice>
+		<cisloPopisne>1578/34</cisloPopisne>
+		<psc>748 01</psc>
+		<druhStavKonkursu>ODDLUŽENÍ</druhStavKonkursu>
+		<urlDetailRizeni>
+			https://isir.justice.cz/isir/ueu/evidence_upadcu_detail.do?id=55ae2a9e-b6c1-49c2-bc82-cf6f698a02b1
+		</urlDetailRizeni>
+		<dalsiDluznikVRizeni>T</dalsiDluznikVRizeni>
+	</data>
+	<data>
+		<ic>74521071</ic>
+		<rc>850121/5910</rc>
+		<cisloSenatu>14</cisloSenatu>
+		<druhVec>INS</druhVec>
+		<bcVec>17532</bcVec>
+		<rocnik>2015</rocnik>
+		<nazevOrganizace>Krajský soud v Ostravě</nazevOrganizace>
+		<datumNarozeni>1985-01-21Z</datumNarozeni>
+		<jmeno>Tomáš</jmeno>
+		<nazevOsoby>Sedláček</nazevOsoby>
+		<druhAdresy>SÍDLO FY</druhAdresy>
+		<mesto>Chlebičov</mesto>
+		<ulice>Na Rybníku</ulice>
+		<cisloPopisne>100</cisloPopisne>
+		<okres>Opava</okres>
+		<psc>747 31</psc>
+		<druhStavKonkursu>ODDLUŽENÍ</druhStavKonkursu>
+		<urlDetailRizeni>
+			https://isir.justice.cz/isir/ueu/evidence_upadcu_detail.do?id=96a74bf8-3a8b-4e0c-ad72-4a8198e5780c
+		</urlDetailRizeni>
+		<dalsiDluznikVRizeni>F</dalsiDluznikVRizeni>
+	</data>
+	<data>
+		<rc>750730/1901</rc>
+		<cisloSenatu>65</cisloSenatu>
+		<druhVec>INS</druhVec>
+		<bcVec>145</bcVec>
+		<rocnik>2017</rocnik>
+		<nazevOrganizace>Krajský soud v Plzni</nazevOrganizace>
+		<datumNarozeni>1975-07-30Z</datumNarozeni>
+		<jmeno>Tomáš</jmeno>
+		<nazevOsoby>Sedláček</nazevOsoby>
+		<druhAdresy>TRVALÁ</druhAdresy>
+		<mesto>Karlovy Vary</mesto>
+		<ulice>Moskevská</ulice>
+		<cisloPopisne>2035/21</cisloPopisne>
+		<okres>Karlovy Vary</okres>
+		<psc>360 01</psc>
+		<druhStavKonkursu>ODDLUŽENÍ</druhStavKonkursu>
+		<urlDetailRizeni>
+			https://isir.justice.cz/isir/ueu/evidence_upadcu_detail.do?id=5505670190E34F56B18E775958E8025A
+		</urlDetailRizeni>
+		<dalsiDluznikVRizeni>F</dalsiDluznikVRizeni>
+	</data>
+	<data>
+		<rc>825124/1977</rc>
+		<cisloSenatu>65</cisloSenatu>
+		<druhVec>INS</druhVec>
+		<bcVec>145</bcVec>
+		<rocnik>2017</rocnik>
+		<nazevOrganizace>Krajský soud v Plzni</nazevOrganizace>
+		<datumNarozeni>1982-01-24Z</datumNarozeni>
+		<jmeno>Vladimíra</jmeno>
+		<nazevOsoby>Sedláčková</nazevOsoby>
+		<druhAdresy>TRVALÁ</druhAdresy>
+		<mesto>Karlovy Vary</mesto>
+		<ulice>Závodu míru</ulice>
+		<cisloPopisne>331/76</cisloPopisne>
+		<okres>Karlovy Vary</okres>
+		<psc>360 17</psc>
+		<druhStavKonkursu>ODDLUŽENÍ</druhStavKonkursu>
+		<urlDetailRizeni>
+			https://isir.justice.cz/isir/ueu/evidence_upadcu_detail.do?id=28D37E34D3424D25ABE639151EACA85C
+		</urlDetailRizeni>
+		<dalsiDluznikVRizeni>T</dalsiDluznikVRizeni>
+	</data>
+	<data>
+		<rc>850117/4770</rc>
+		<cisloSenatu>37</cisloSenatu>
+		<druhVec>INS</druhVec>
+		<bcVec>17712</bcVec>
+		<rocnik>2017</rocnik>
+		<nazevOrganizace>Krajský soud v Brně</nazevOrganizace>
+		<datumNarozeni>1985-01-17Z</datumNarozeni>
+		<jmeno>Tomáš</jmeno>
+		<nazevOsoby>Sedláček</nazevOsoby>
+		<druhAdresy>TRVALÁ</druhAdresy>
+		<mesto>Dobronín</mesto>
+		<ulice>U Staré školy</ulice>
+		<cisloPopisne>217</cisloPopisne>
+		<psc>588 12</psc>
+		<druhStavKonkursu>ODDLUŽENÍ</druhStavKonkursu>
+		<urlDetailRizeni>
+			https://isir.justice.cz/isir/ueu/evidence_upadcu_detail.do?id=2985123F112C4FACA50454B133778EC1
+		</urlDetailRizeni>
+		<dalsiDluznikVRizeni>F</dalsiDluznikVRizeni>
+	</data>
+	<data>
+		<ic>04620453</ic>
+		<rc>940603/6068</rc>
+		<cisloSenatu>41</cisloSenatu>
+		<druhVec>INS</druhVec>
+		<bcVec>12381</bcVec>
+		<rocnik>2018</rocnik>
+		<nazevOrganizace>Krajský soud v Ostravě - pobočka v Olomouci</nazevOrganizace>
+		<datumNarozeni>1994-06-03Z</datumNarozeni>
+		<jmeno>Tomáš</jmeno>
+		<nazevOsoby>Sedláček</nazevOsoby>
+		<druhAdresy>TRVALÁ</druhAdresy>
+		<mesto>Přerov</mesto>
+		<ulice>Hranická</ulice>
+		<cisloPopisne>74/21</cisloPopisne>
+		<psc>751 24</psc>
+		<druhStavKonkursu>ODDLUŽENÍ</druhStavKonkursu>
+		<urlDetailRizeni>
+			https://isir.justice.cz/isir/ueu/evidence_upadcu_detail.do?id=4BD595A70AFD4EAC97B0F9B1C524C8AD
+		</urlDetailRizeni>
+		<dalsiDluznikVRizeni>F</dalsiDluznikVRizeni>
+	</data>
+	<data>
+		<ic>71468200</ic>
+		<rc>740614/3899</rc>
+		<cisloSenatu>44</cisloSenatu>
+		<druhVec>INS</druhVec>
+		<bcVec>15202</bcVec>
+		<rocnik>2018</rocnik>
+		<nazevOrganizace>Krajský soud v Brně</nazevOrganizace>
+		<datumNarozeni>1974-06-14Z</datumNarozeni>
+		<titulPred>Mgr.</titulPred>
+		<jmeno>Tomáš</jmeno>
+		<nazevOsoby>Sedláček</nazevOsoby>
+		<druhAdresy>TRVALÁ</druhAdresy>
+		<mesto>Brno</mesto>
+		<ulice>Strmá</ulice>
+		<cisloPopisne>2813/67</cisloPopisne>
+		<psc>616 00</psc>
+		<druhStavKonkursu>NEVYRIZENA</druhStavKonkursu>
+		<urlDetailRizeni>
+			https://isir.justice.cz/isir/ueu/evidence_upadcu_detail.do?id=A2781D058B954A498BC7E588D396A92D
+		</urlDetailRizeni>
+		<dalsiDluznikVRizeni>F</dalsiDluznikVRizeni>
+	</data>
+	<stav>
+		<pocetVysledku>9</pocetVysledku>
+		<relevanceVysledku>6</relevanceVysledku>
+		<casSynchronizace>2019-01-11T13:12:05.000Z</casSynchronizace>
+	</stav>
+</root>
