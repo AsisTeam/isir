@@ -1,6 +1,6 @@
 <?php declare(strict_types = 1);
 
-namespace AsisTeam\ISIR\DI;
+namespace AsisTeam\ISIR\Bridges\Nette\DI;
 
 use AsisTeam\ISIR\Client\InsolvencyCheckerClient;
 use AsisTeam\ISIR\Client\Request\Options;
