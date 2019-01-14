@@ -17,7 +17,7 @@ $client = (new InsolvencyCheckerClientFactory())->create();
 
 Client offers you to check if company/person has some insolvency attached or gte insolvency detail by passing it's code and vintage.
 
-__List of available methods:__
+### List of available methods
 - checkCompanyById($companyIco): Insolvency
 - checkCompanyByName($companyName): Insolvency
 - checkPersonById($personalId): Insolvency
@@ -25,13 +25,31 @@ __List of available methods:__
 - checkPersonByNameAndBirth($lastname, $birthday): Insolvency[]
 - checkProceeding($code, $vintage): Insolvency
 
+##### Options param
+
+Every method above has optional parameter `boolean $activeOnly`. When set to true, only currently active insolvencies will be queried.
+Otherwise currently active and/or historical ones will be queried.
+
+##### ActiveOnly param
+
+`CheckPersonByName`, `checkPersonByNameAndBirth` and `checkCompanyByName` methods have last optional parameter `Options $opts`.
+By passing this object to those methods you can modify, how the remote API will search in its registries.
+All `Options` parameters are optional. The Options object passed to method will overwrite the Options object used while creating the client.
+
+- maxResultCount: max number of insolvencies to be returned by API for single query
+- maxResultRelevancy: set the "deepness" of the searching
+- exactNameMatch: only exact matches will be present in results
+- useDiacritics: whether to use or not diacritics for searching in registries
+
+#### Insolvency result object
+
 If some insolvency is found a single `AsisTeam\ISIR\Entity\Insolvency` object or array of `Insolvency` objects is being returned.
 When there is no record for given params (combination of names, ico, personalId, etc) the `NoRecordFoundException` exception is being thrown.
 
+#### Exceptions
+
 In case of any invalid given data, server error or other error `RequestException` or `ResponseException` (or their child exceptions) are thrown.
 
-Every method has last optional parameter `Options`. By passing this object you can modify how the remote API will search in its registries.
-All parameters are optional. The Options object passed to method will overwrite the Options object passed when creating the client.
 
 ### Usage
 
@@ -40,7 +58,7 @@ $client = (new InsolvencyCheckerClientFactory())->create();
 
 // check company insolvency
 try {
-    $ins = $client->checkCompanyById('27680339');
+    $ins = $client->checkCompanyById('27680339', true); // true -> only active insolvencies, false -> query active OR historical insolvencies
     echo $ins->headerToString(); // print insolvency legal header
     echo $ins->addressToString(); // print address
     echo $ins->subjectToString(); // print company/person details
@@ -50,7 +68,7 @@ try {
 
 // check person insolvency by his PID
 try {
-    $ins = $client->checkpersonById('880712/3244'); // may be used without slash too
+    $ins = $client->checkpersonById('880712/3244'); // may be used without slash too> "8807123244"
     echo $ins->subjectToString(); // print company/person details
 } catch (NoRecordFoundException $e) {
     // company does not have any insolvency attached
@@ -103,9 +121,6 @@ isir:
     
     # limiting the results by relevancy (higher relevancies will be ommited), please see official doc
     max_result_relevancy: 7
-    
-    # filter only active insolvencies
-    active_proceedings_only: false
     
     # querying by name must find exact name match 
     exact_name_match: false

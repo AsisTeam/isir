@@ -14,7 +14,7 @@ class InsolvencyCheckerClientTest extends TestCase
 	public function testCheckByCompanyId(): void
 	{
 		$client = new InsolvencyCheckerClient(SoapMockHelper::createSoapMock('by_company_id.xml'));
-		$ins = $client->checkCompanyById('27680339');
+		$ins = $client->checkCompanyById('27680339', true);
 
 		Assert::equal('Krajský soud v Brně, 40 INS 11095 / 2018', $ins->headerToString());
 		Assert::equal('SÍDLO FY, J. Fučíka 308, Holasice 664 61', $ins->addressToString());
@@ -27,7 +27,7 @@ class InsolvencyCheckerClientTest extends TestCase
 	public function testCheckByPersonalId(): void
 	{
 		$client = new InsolvencyCheckerClient(SoapMockHelper::createSoapMock('by_personal_id.xml'));
-		$ins = $client->checkCompanyById('661227/1234'); // same as '6612271234'
+		$ins = $client->checkCompanyById('661227/1234', true); // same as '6612271234'
 
 		Assert::equal('Krajský soud v Praze, 41 INS 17502 / 2012', $ins->headerToString());
 		Assert::equal('TRVALÁ, Havlíčkova 53, Zbyslav 286 01', $ins->addressToString());
@@ -40,7 +40,7 @@ class InsolvencyCheckerClientTest extends TestCase
 	public function testCheckByPersonName(): void
 	{
 		$client = new InsolvencyCheckerClient(SoapMockHelper::createSoapMock('by_person_name.xml'));
-		$ins = $client->checkPersonByName('Tomáš', 'Sedláček');
+		$ins = $client->checkPersonByName('Tomáš', 'Sedláček', true);
 
 		Assert::count(9, $ins);
 		foreach ($ins as $i) {
@@ -65,7 +65,7 @@ class InsolvencyCheckerClientTest extends TestCase
 	public function testCheckEmptyDataError(): void
 	{
 		$client = new InsolvencyCheckerClient(SoapMockHelper::createSoapMock('error_ws2.xml'));
-		$client->checkCompanyById('123456789');
+		$client->checkCompanyById('123456789', true);
 	}
 
 	/**
@@ -74,7 +74,7 @@ class InsolvencyCheckerClientTest extends TestCase
 	public function testCheckInvalidRequestError(): void
 	{
 		$client = new InsolvencyCheckerClient(SoapMockHelper::createSoapMock('error_ws1.xml'));
-		$client->checkCompanyById('123456789');
+		$client->checkCompanyById('123456789', true);
 	}
 
 }

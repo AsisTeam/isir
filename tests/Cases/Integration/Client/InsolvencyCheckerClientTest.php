@@ -31,46 +31,46 @@ class InsolvencyCheckerClientTest extends TestCase
 		$client = (new InsolvencyCheckerClientFactory())->create();
 
 		// without the slash
-		$ins = $client->checkPersonById('6612276561');
+		$ins = $client->checkPersonById('6612276561', false);
 		Assert::equal('661227/6561', $ins->getPersonalId());
 
 		// with the slash
-		$ins = $client->checkPersonById('661227/6561');
+		$ins = $client->checkPersonById('661227/6561', false);
 		Assert::equal('661227/6561', $ins->getPersonalId());
 	}
 
 	public function testCheckPersonByName(): void
 	{
-		$ins = $this->client->checkPersonByName('Otto', 'Hruška');
+		$ins = $this->client->checkPersonByName('Otto', 'Hruška', true);
 		Assert::count(1, $ins);
 
-		$ins = $this->client->checkPersonByName('Tomáš', 'Sedláček');
+		$ins = $this->client->checkPersonByName('Tomáš', 'Sedláček', false);
 		Assert::count(9, $ins);
 
 		$opts = new Options(3);
-		$ins = $this->client->checkPersonByName('Tomáš', 'Sedláček', $opts);
+		$ins = $this->client->checkPersonByName('Tomáš', 'Sedláček', true, $opts);
 		Assert::count(3, $ins);
 
 		$opts = new Options(100, Relevancy::BY_NAME_SURNAME, true, true);
-		$ins = $this->client->checkPersonByName('Tomáš', 'Sedláček', $opts);
+		$ins = $this->client->checkPersonByName('Tomáš', 'Sedláček', true, $opts);
 		Assert::count(9, $ins);
 	}
 
 	public function testCheckPersonByNameAndBirth(): void
 	{
-		$ins = $this->client->checkPersonByNameAndBirth('Sedláček', new DateTimeImmutable('1994-06-03'));
+		$ins = $this->client->checkPersonByNameAndBirth('Sedláček', new DateTimeImmutable('1994-06-03'), true);
 		Assert::count(1, $ins);
 	}
 
 	public function testCheckCompanyById(): void
 	{
-		$ins = $this->client->checkCompanyById('27680339');
+		$ins = $this->client->checkCompanyById('27680339', true);
 		Assert::equal('27680339', $ins->getCompanyId());
 	}
 
 	public function testCheckCompanyByName(): void
 	{
-		$ins = $this->client->checkCompanyByName('SCF SERVIS, s.r.o');
+		$ins = $this->client->checkCompanyByName('SCF SERVIS, s.r.o', true);
 		Assert::count(1, $ins);
 		Assert::equal('27680339', $ins[0]->getCompanyId());
 	}

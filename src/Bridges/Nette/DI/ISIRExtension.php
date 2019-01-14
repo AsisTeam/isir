@@ -14,7 +14,6 @@ class ISIRExtension extends CompilerExtension
 	public $defaults = [
 		'max_result_count'        => 200,
 		'max_result_relevancy'    => Relevancy::BY_SURNAME,
-		'active_proceedings_only' => false,
 		'exact_name_match'        => false,
 		'use_diacritics'          => true,
 	];

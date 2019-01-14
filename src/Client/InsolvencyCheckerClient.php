@@ -5,6 +5,7 @@ namespace AsisTeam\ISIR\Client;
 use AsisTeam\ISIR\Client\Request\Options;
 use AsisTeam\ISIR\Client\Response\Hydrator;
 use AsisTeam\ISIR\Entity\Insolvency;
+use AsisTeam\ISIR\Enum\Relevancy;
 use AsisTeam\ISIR\Exception\Runtime\RequestException;
 use DateTimeImmutable;
 use SoapClient;
@@ -25,35 +26,50 @@ final class InsolvencyCheckerClient
 		$this->options = $clientOpts;
 	}
 
-	public function checkProceeding(int $no, int $vintage, ?Options $opts = null): Insolvency
+	public function checkPersonById(string $personId, bool $activeOnly = false): Insolvency
 	{
-		return $this->check(['bcVec' => $no, 'rocnik' => $vintage], $opts)[0];
+		$opts = new Options(1, Relevancy::BY_PERSONAL_ID);
+
+		return $this->check(['rc' => $personId], $activeOnly, $opts)[0];
 	}
 
-	public function checkCompanyById(string $companyId, ?Options $opts = null): Insolvency
+	public function checkCompanyById(string $companyId, bool $activeOnly = false): Insolvency
 	{
-		return $this->check(['ic' => $companyId], $opts)[0];
+		$opts = new Options(1, Relevancy::BY_COMPANY_ID);
+
+		return $this->check(['ic' => $companyId], $activeOnly, $opts)[0];
 	}
 
-	public function checkPersonById(string $personId, ?Options $opts = null): Insolvency
+	public function checkProceeding(int $no, int $vintage, bool $activeOnly = false): Insolvency
 	{
-		return $this->check(['rc' => $personId], $opts)[0];
+		$opts = new Options(1, Relevancy::BY_FILE_NUMBER);
+
+		return $this->check(['bcVec' => $no, 'rocnik' => $vintage], $activeOnly, $opts)[0];
 	}
 
 	/**
 	 * @return Insolvency[]
 	 */
-	public function checkCompanyByName(string $name, ?Options $opts = null): array
+	public function checkCompanyByName(
+		string $name,
+		bool $activeOnly = false,
+		?Options $opts = null
+	): array
 	{
-		return $this->check(['nazevOsoby' => $name], $opts);
+		return $this->check(['nazevOsoby' => $name], $activeOnly, $opts);
 	}
 
 	/**
 	 * @return Insolvency[]
 	 */
-	public function checkPersonByName(string $firstname, string $lastname, ?Options $opts = null): array
+	public function checkPersonByName(
+		string $firstname,
+		string $lastname,
+		bool $activeOnly = false,
+		?Options $opts = null
+	): array
 	{
-		return $this->check(['nazevOsoby' => $lastname, 'jmeno' => $firstname], $opts);
+		return $this->check(['nazevOsoby' => $lastname, 'jmeno' => $firstname], $activeOnly, $opts);
 	}
 
 	/**
@@ -62,6 +78,7 @@ final class InsolvencyCheckerClient
 	public function checkPersonByNameAndBirth(
 		string $lastname,
 		DateTimeImmutable $birthday,
+		bool $activeOnly = false,
 		?Options $opts = null
 	): array
 	{
@@ -70,6 +87,7 @@ final class InsolvencyCheckerClient
 				'nazevOsoby'    => $lastname,
 				'datumNarozeni' => $birthday->format('Y-m-d'),
 			],
+			$activeOnly,
 			$opts
 		);
 	}
@@ -78,13 +96,13 @@ final class InsolvencyCheckerClient
 	 * @param mixed[] $params
 	 * @return Insolvency[]
 	 */
-	private function check(array $params, ?Options $reqOpts = null): array
+	private function check(array $params, bool $activeOnly = false, ?Options $reqOpts = null): array
 	{
 		try {
 			$opts = $this->getOpts($reqOpts);
 			$data = array_merge($params, $opts);
+			$data['filtrAktualniRizeni'] = Options::boolToStr($activeOnly);
 
-			// phpstan-ignore-next-line
 			$resp = $this->client->getIsirWsCuzkData($data);
 
 			return Hydrator::hydrate($resp);
