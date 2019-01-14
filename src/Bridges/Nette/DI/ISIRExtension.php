@@ -7,7 +7,7 @@ use AsisTeam\ISIR\Client\Request\Options;
 use AsisTeam\ISIR\Enum\Relevancy;
 use Nette\DI\CompilerExtension;
 
-final class ISIRExtension extends CompilerExtension
+class ISIRExtension extends CompilerExtension
 {
 
 	/** @var mixed[] */
