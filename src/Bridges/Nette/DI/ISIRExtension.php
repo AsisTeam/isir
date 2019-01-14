@@ -2,7 +2,7 @@
 
 namespace AsisTeam\ISIR\Bridges\Nette\DI;
 
-use AsisTeam\ISIR\Client\InsolvencyCheckerClient;
+use AsisTeam\ISIR\Client\InsolvencyCheckerClientFactory;
 use AsisTeam\ISIR\Client\Request\Options;
 use AsisTeam\ISIR\Enum\Relevancy;
 use Nette\DI\CompilerExtension;
@@ -27,8 +27,8 @@ class ISIRExtension extends CompilerExtension
 		$config  = $this->validateConfig($this->defaults);
 		$builder = $this->getContainerBuilder();
 
-		$builder->addDefinition($this->prefix('insolvency_checker'))
-			->setFactory(InsolvencyCheckerClient::class, [Options::fromArray($config)]);
+		$builder->addDefinition($this->prefix('insolvency_checker_factory'))
+			->setFactory(InsolvencyCheckerClientFactory::class, [Options::fromArray($config)]);
 	}
 
 }
