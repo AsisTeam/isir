@@ -1,10 +1,10 @@
 {
-  "name": "asisteam/isir-insolvency-registry",
+  "name": "asisteam/isir",
   "description": "Implemenation of communication with ISIR API (Insolvency registry API by Ministerstvo spravedlnosti CR)",
   "keywords": ["ISIR", "insolvency", "API"],
   "type": "library",
   "license": "MIT",
-  "homepage": "https://github.com/AsisTeam/isir-insolvency-registry",
+  "homepage": "https://github.com/AsisTeam/isir",
   "authors": [
     {
       "name": "Tomas Sedlacek",

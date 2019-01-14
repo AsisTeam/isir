@@ -1,4 +1,4 @@
-# AsisTeam > isir-insolvency-registry
+# AsisTeam > ISIR (Czech insolvency registry)
 
 ## Credits
 
@@ -14,12 +14,12 @@ Feel free to use. Your contributions are very welcome. Feel free to publish pull
 
 This PHP API wrapper allows you to check whether there is some insolvency record for given person/company in Czech insolvency registry.
 
-- [InsolvencyChecker - detailed usage documentation](https://github.com/AsisTeam/isir-insolvency-registry/blob/master/.docs/README.md)
+- [InsolvencyChecker - detailed usage documentation](https://github.com/AsisTeam/isir/blob/master/.docs/README.md)
 
 ## Install
 
 ```
-composer require asisteam/isir-insolvency-registry
+composer require asisteam/isir
 ```
 
 ## Versions

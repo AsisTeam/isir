@@ -1,7 +1,7 @@
 # ISIR Insolvency Registry
 
 This API wrapper allows you to check whether there is some insolvency record for given person/company in czech insolvency registry. 
-The original documentation that contains some additional details is - [here - Popis_WS_2_v1_7.pdf](https://github.com/AsisTeam/isir-insolvency-registry/blob/master/.docs/Popis_WS_2_v1_7.pdf)
+The original documentation that contains some additional details is - [here - Popis_WS_2_v1_7.pdf](https://github.com/AsisTeam/isir/blob/master/.docs/Popis_WS_2_v1_7.pdf)
 
 ## Client
 
