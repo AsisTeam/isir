@@ -1,5 +1,12 @@
 # AsisTeam > ISIR (Czech insolvency registry)
 
+[![Build Status](https://img.shields.io/travis/com/AsisTeam/isir.svg?style=flat-square)](https://travis-ci.com/AsisTeam/isir)
+[![Licence](https://img.shields.io/packagist/l/AsisTeam/isir.svg?style=flat-square)](https://packagist.org/packages/AsisTeam/isir)
+[![Downloads this Month](https://img.shields.io/packagist/dm/AsisTeam/isir.svg?style=flat-square)](https://packagist.org/packages/AsisTeam/isir)
+[![Downloads total](https://img.shields.io/packagist/dt/AsisTeam/isir.svg?style=flat-square)](https://packagist.org/packages/AsisTeam/isir)
+[![Latest stable](https://img.shields.io/packagist/v/AsisTeam/isir.svg?style=flat-square)](https://packagist.org/packages/AsisTeam/isir)
+[![PHPStan](https://img.shields.io/badge/PHPStan-enabled-brightgreen.svg?style=flat)](https://github.com/phpstan/phpstan)
+
 ## Credits
 
 The development is under [AsisTeam s.r.o.](https://www.asisteam.cz/).
