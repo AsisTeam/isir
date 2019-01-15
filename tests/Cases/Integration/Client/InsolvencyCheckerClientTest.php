@@ -32,11 +32,20 @@ class InsolvencyCheckerClientTest extends TestCase
 
 		// without the slash
 		$ins = $client->checkPersonById('6612276561', false);
-		Assert::equal('661227/6561', $ins->getPersonalId());
+		Assert::count(1, $ins);
+		Assert::equal('661227/6561', $ins[0]->getPersonalId());
 
 		// with the slash
 		$ins = $client->checkPersonById('661227/6561', false);
-		Assert::equal('661227/6561', $ins->getPersonalId());
+		Assert::count(1, $ins);
+		Assert::equal('661227/6561', $ins[0]->getPersonalId());
+
+		// with active and historical records
+		$ins = $client->checkPersonById('580519/2228', false);
+		Assert::count(2, $ins);
+		foreach ($ins as $i) {
+			Assert::equal('580519/2228', $i->getPersonalId());
+		}
 	}
 
 	public function testCheckPersonByName(): void
@@ -65,7 +74,8 @@ class InsolvencyCheckerClientTest extends TestCase
 	public function testCheckCompanyById(): void
 	{
 		$ins = $this->client->checkCompanyById('27680339', true);
-		Assert::equal('27680339', $ins->getCompanyId());
+		Assert::count(1, $ins);
+		Assert::equal('27680339', $ins[0]->getCompanyId());
 	}
 
 	public function testCheckCompanyByName(): void
@@ -78,8 +88,9 @@ class InsolvencyCheckerClientTest extends TestCase
 	public function testCheckProceeding(): void
 	{
 		$ins = $this->client->checkProceeding(17712, 2017);
-		Assert::equal(17712, $ins->getRecordCommonNo());
-		Assert::equal(2017, $ins->getVintage());
+		Assert::count(1, $ins);
+		Assert::equal(17712, $ins[0]->getRecordCommonNo());
+		Assert::equal(2017, $ins[0]->getVintage());
 	}
 
 }

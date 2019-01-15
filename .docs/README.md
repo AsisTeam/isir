@@ -18,10 +18,10 @@ $client = (new InsolvencyCheckerClientFactory())->create();
 Client offers you to check if company/person has some insolvency attached or gte insolvency detail by passing it's code and vintage.
 
 ### List of available methods
-- checkProceeding($code, $vintage): ?Insolvency
-- checkCompanyById($companyIco): ?Insolvency
-- checkCompanyByName($companyName): ?Insolvency
-- checkPersonById($personalId): ?Insolvency
+- checkProceeding($code, $vintage): Insolvency[]
+- checkCompanyById($companyIco): Insolvency[]
+- checkCompanyByName($companyName): Insolvency[]
+- checkPersonById($personalId): Insolvency[]
 - checkPersonByName($firstname, $lastname): Insolvency[]
 - checkPersonByNameAndBirth($lastname, $birthday): Insolvency[]
 
@@ -43,13 +43,12 @@ All `Options` parameters are optional. The Options object passed to method will 
 
 #### Insolvency result object
 
-If some insolvency is found a single `AsisTeam\ISIR\Entity\Insolvency` object or array of `Insolvency` objects is being returned.
-When there is no record for given params (combination of names, ico, personalId, etc)  `null` or `empty array` is returned depending on called method. 
+Every method above returns array of `AsisTeam\ISIR\Entity\Insolvency` objects.
+When there is no record for given params (combination of names, ico, personalId, etc) `empty array` is returned.
 
 #### Exceptions
 
 In case of any invalid given data, server error or other error `RequestException` or `ResponseException` (or their child exceptions) are thrown.
-
 
 ### Usage
 
@@ -62,10 +61,11 @@ $client = (new InsolvencyCheckerClientFactory())->create();
 //   false -> query both active and historical insolvencies
 $activeOnly = true;
 $ins = $client->checkCompanyById('27680339', $activeOnly);
-if ($ins !== null) {
-    echo $ins->headerToString(); // print insolvency legal header (eg. "Krajský soud v Brně, 40 INS 11095 / 2018")
-    echo $ins->addressToString(); // print address
-    echo $ins->subjectToString(); // print company/person details
+foreach ($ins as $i) {
+    echo $i->headerToString(); // print insolvency legal header (eg. "Krajský soud v Brně, 40 INS 11095 / 2018")
+    echo $i->addressToString(); // print address
+    echo $i->subjectToString(); // print company/person details
+    echo '\n';
 }
 
 // ----------------------------------
@@ -74,8 +74,8 @@ if ($ins !== null) {
 // may be used without slash too: "8807123244"
 $activeOnly = false;
 $ins = $client->checkpersonById('880712/3244', $activeOnly);
-if ($ins !== null) {
-    echo $ins->subjectToString(); // print company/person details
+foreach ($ins as $i) {
+    echo $i->subjectToString() . '\n'; // print company/person details
 }
 
 // ----------------------------------
@@ -92,21 +92,19 @@ foreach ($ins as $i) {
 
 // find insolvency detail
 $ins = $client->checkProceeding(123456, 2018, false);
-if ($ins !== null) {
-    echo $ins->headerToString(); 
+foreach ($ins as $i) {
+    echo $ins->headerToString() . '\n';
 }
 ```
 
 ### Insolvency entity
 
-Client public params return single `Insolvency` entity or list of these entities as described above in the "List of available methods".
-`Insolvency` entity has a getter function for fields that remote API provides (legal fields, address fields etc).
-It can be annoying to compose some readable output from these getters, so there are several methods available in `Insolvency` entity:
+`AsisTeam\ISIR\Entity\Insolvency` entity has get functions for all fields that remote API provides (legal fields, address fields etc).
+
+It can be often annoying to compose some readable output from these getters, so there are several methods available in `Insolvency` entity to ease your day:
 - headerToString(): string [example output: "Krajský soud v Brně, 40 INS 11095 / 2018"]
 - addressToString(): string [example output: "SÍDLO FY, J. Fučíka 308, Holasice 664 61"]
 - subjectToString(): string [example output: "ID: 27680339, SCF SERVIS, s.r.o.", "ID: 661227/1234, Josef Bolvan"]
-
-These can be used for your simple outputs.
 
 ## Nette
 

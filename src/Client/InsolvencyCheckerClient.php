@@ -27,25 +27,34 @@ final class InsolvencyCheckerClient
 		$this->options = $clientOpts;
 	}
 
-	public function checkPersonById(string $personId, bool $activeOnly = false): ?Insolvency
+	/**
+	 * @return Insolvency[]
+	 */
+	public function checkPersonById(string $personId, bool $activeOnly = false): array
 	{
-		$opts = new Options(1, Relevancy::BY_PERSONAL_ID);
+		$opts = (new Options())->setMaxResultRelevancy(Relevancy::BY_PERSONAL_ID);
 
-		return $this->check(['rc' => $personId], $activeOnly, $opts)[0] ?? null;
+		return $this->check(['rc' => $personId], $activeOnly, $opts);
 	}
 
-	public function checkCompanyById(string $companyId, bool $activeOnly = false): ?Insolvency
+	/**
+	 * @return Insolvency[]
+	 */
+	public function checkCompanyById(string $companyId, bool $activeOnly = false): array
 	{
-		$opts = new Options(1, Relevancy::BY_COMPANY_ID);
+		$opts = (new Options())->setMaxResultRelevancy(Relevancy::BY_COMPANY_ID);
 
-		return $this->check(['ic' => $companyId], $activeOnly, $opts)[0] ?? null;
+		return $this->check(['ic' => $companyId], $activeOnly, $opts);
 	}
 
-	public function checkProceeding(int $no, int $vintage, bool $activeOnly = false): ?Insolvency
+	/**
+	 * @return Insolvency[]
+	 */
+	public function checkProceeding(int $no, int $vintage, bool $activeOnly = false): array
 	{
-		$opts = new Options(1, Relevancy::BY_FILE_NUMBER);
+		$opts = (new Options())->setMaxResultRelevancy(Relevancy::BY_FILE_NUMBER);
 
-		return $this->check(['bcVec' => $no, 'rocnik' => $vintage], $activeOnly, $opts)[0] ?? null;
+		return $this->check(['bcVec' => $no, 'rocnik' => $vintage], $activeOnly, $opts);
 	}
 
 	/**

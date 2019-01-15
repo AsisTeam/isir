@@ -1,0 +1,49 @@
+<root>
+	<data>
+		<rc>580519/2228</rc>
+		<cisloSenatu>40</cisloSenatu>
+		<druhVec>INS</druhVec>
+		<bcVec>2928</bcVec>
+		<rocnik>2018</rocnik>
+		<nazevOrganizace>Krajský soud v Brně</nazevOrganizace>
+		<datumNarozeni>1958-05-19Z</datumNarozeni>
+		<jmeno>Jaroslav</jmeno>
+		<nazevOsoby>Vavřička</nazevOsoby>
+		<druhAdresy>TRVALÁ</druhAdresy>
+		<mesto>Zlín</mesto>
+		<ulice>Potoky</ulice>
+		<cisloPopisne>4315</cisloPopisne>
+		<psc>760 01</psc>
+		<druhStavKonkursu>PRAVOMOCNA</druhStavKonkursu>
+		<urlDetailRizeni>
+			https://isir.justice.cz/isir/ueu/evidence_upadcu_detail.do?id=DEA5D10729904E4B85ADE029667C1DE9
+		</urlDetailRizeni>
+		<dalsiDluznikVRizeni>F</dalsiDluznikVRizeni>
+	</data>
+	<data>
+		<rc>580519/2228</rc>
+		<cisloSenatu>38</cisloSenatu>
+		<druhVec>INS</druhVec>
+		<bcVec>10347</bcVec>
+		<rocnik>2018</rocnik>
+		<nazevOrganizace>Krajský soud v Brně</nazevOrganizace>
+		<datumNarozeni>1958-05-19Z</datumNarozeni>
+		<jmeno>Jaroslav</jmeno>
+		<nazevOsoby>Vavřička</nazevOsoby>
+		<druhAdresy>TRVALÁ</druhAdresy>
+		<mesto>Zlín</mesto>
+		<ulice>Potoky</ulice>
+		<cisloPopisne>4315</cisloPopisne>
+		<psc>760 01</psc>
+		<druhStavKonkursu>KONKURS</druhStavKonkursu>
+		<urlDetailRizeni>
+			https://isir.justice.cz/isir/ueu/evidence_upadcu_detail.do?id=5FE9532E7331497BB27CF36883899AED
+		</urlDetailRizeni>
+		<dalsiDluznikVRizeni>F</dalsiDluznikVRizeni>
+	</data>
+	<stav>
+		<pocetVysledku>2</pocetVysledku>
+		<relevanceVysledku>1</relevanceVysledku>
+		<casSynchronizace>2019-01-15T09:19:52.000Z</casSynchronizace>
+	</stav>
+</root>
