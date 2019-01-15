@@ -6,6 +6,7 @@ use AsisTeam\ISIR\Client\Request\Options;
 use AsisTeam\ISIR\Client\Response\Hydrator;
 use AsisTeam\ISIR\Entity\Insolvency;
 use AsisTeam\ISIR\Enum\Relevancy;
+use AsisTeam\ISIR\Exception\Runtime\NoRecordFoundException;
 use AsisTeam\ISIR\Exception\Runtime\RequestException;
 use DateTimeImmutable;
 use SoapClient;
@@ -26,25 +27,25 @@ final class InsolvencyCheckerClient
 		$this->options = $clientOpts;
 	}
 
-	public function checkPersonById(string $personId, bool $activeOnly = false): Insolvency
+	public function checkPersonById(string $personId, bool $activeOnly = false): ?Insolvency
 	{
 		$opts = new Options(1, Relevancy::BY_PERSONAL_ID);
 
-		return $this->check(['rc' => $personId], $activeOnly, $opts)[0];
+		return $this->check(['rc' => $personId], $activeOnly, $opts)[0] ?? null;
 	}
 
-	public function checkCompanyById(string $companyId, bool $activeOnly = false): Insolvency
+	public function checkCompanyById(string $companyId, bool $activeOnly = false): ?Insolvency
 	{
 		$opts = new Options(1, Relevancy::BY_COMPANY_ID);
 
-		return $this->check(['ic' => $companyId], $activeOnly, $opts)[0];
+		return $this->check(['ic' => $companyId], $activeOnly, $opts)[0] ?? null;
 	}
 
-	public function checkProceeding(int $no, int $vintage, bool $activeOnly = false): Insolvency
+	public function checkProceeding(int $no, int $vintage, bool $activeOnly = false): ?Insolvency
 	{
 		$opts = new Options(1, Relevancy::BY_FILE_NUMBER);
 
-		return $this->check(['bcVec' => $no, 'rocnik' => $vintage], $activeOnly, $opts)[0];
+		return $this->check(['bcVec' => $no, 'rocnik' => $vintage], $activeOnly, $opts)[0] ?? null;
 	}
 
 	/**
@@ -112,6 +113,8 @@ final class InsolvencyCheckerClient
 				0,
 				$e
 			);
+		} catch (NoRecordFoundException $e) {
+			return [];
 		}
 	}
 

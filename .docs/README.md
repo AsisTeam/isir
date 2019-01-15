@@ -18,12 +18,12 @@ $client = (new InsolvencyCheckerClientFactory())->create();
 Client offers you to check if company/person has some insolvency attached or gte insolvency detail by passing it's code and vintage.
 
 ### List of available methods
-- checkCompanyById($companyIco): Insolvency
-- checkCompanyByName($companyName): Insolvency
-- checkPersonById($personalId): Insolvency
+- checkProceeding($code, $vintage): ?Insolvency
+- checkCompanyById($companyIco): ?Insolvency
+- checkCompanyByName($companyName): ?Insolvency
+- checkPersonById($personalId): ?Insolvency
 - checkPersonByName($firstname, $lastname): Insolvency[]
 - checkPersonByNameAndBirth($lastname, $birthday): Insolvency[]
-- checkProceeding($code, $vintage): Insolvency
 
 ##### ActiveOnly param
 
@@ -44,7 +44,7 @@ All `Options` parameters are optional. The Options object passed to method will 
 #### Insolvency result object
 
 If some insolvency is found a single `AsisTeam\ISIR\Entity\Insolvency` object or array of `Insolvency` objects is being returned.
-When there is no record for given params (combination of names, ico, personalId, etc) the `NoRecordFoundException` exception is being thrown.
+When there is no record for given params (combination of names, ico, personalId, etc)  `null` or `empty array` is returned depending on called method. 
 
 #### Exceptions
 
@@ -57,39 +57,43 @@ In case of any invalid given data, server error or other error `RequestException
 $client = (new InsolvencyCheckerClientFactory())->create();
 
 // check company insolvency
-try {
-    $ins = $client->checkCompanyById('27680339', true); // true -> only active insolvencies, false -> query active OR historical insolvencies
-    echo $ins->headerToString(); // print insolvency legal header
+// $activeOnly param: 
+//   true  -> query only active insolvencies
+//   false -> query both active and historical insolvencies
+$activeOnly = true;
+$ins = $client->checkCompanyById('27680339', $activeOnly);
+if ($ins !== null) {
+    echo $ins->headerToString(); // print insolvency legal header (eg. "Krajský soud v Brně, 40 INS 11095 / 2018")
     echo $ins->addressToString(); // print address
     echo $ins->subjectToString(); // print company/person details
-} catch (NoRecordFoundException $e) {
-    // company does not have any insolvency attached
 }
 
-// check person insolvency by his PID
-try {
-    $ins = $client->checkpersonById('880712/3244'); // may be used without slash too> "8807123244"
+// ----------------------------------
+
+// check person historical insolvency by his PID
+// may be used without slash too: "8807123244"
+$activeOnly = false;
+$ins = $client->checkpersonById('880712/3244', $activeOnly);
+if ($ins !== null) {
     echo $ins->subjectToString(); // print company/person details
-} catch (NoRecordFoundException $e) {
-    // company does not have any insolvency attached
 }
+
+// ----------------------------------
 
 // find limited number of people with insolvency
-try {
-    $opts = new Options(5);
-    $ins = $client->checkPersonByName('Tomáš', 'Sedláček');
-    echo count($ins); // how many records was found (will be less or equal 5)
-} catch (NoRecordFoundException $e) {
-    // any person does not match given name and surname
+$opts = new Options(5);
+$ins = $client->checkPersonByName('Tomáš', 'Sedláček', true, $opts);
+// $ins will contain <0-5> objects
+foreach ($ins as $i) {
+    echo $i->headerToString() . '\n';
 }
 
+// ----------------------------------
+
 // find insolvency detail
-try {
-    $ins = $client->checkProceeding(123456, 2018);
-    // print insolvency legal header (eg. "Krajský soud v Brně, 40 INS 11095 / 2018")
+$ins = $client->checkProceeding(123456, 2018, false);
+if ($ins !== null) {
     echo $ins->headerToString(); 
-} catch (NoRecordFoundException $e) {
-    //no insolvency with such code and vintage
 }
 ```
 

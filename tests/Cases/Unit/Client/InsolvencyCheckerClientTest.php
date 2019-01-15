@@ -59,13 +59,11 @@ class InsolvencyCheckerClientTest extends TestCase
 		Assert::equal('ID: 850117/4770, Tomáš Sedláček', $ins->subjectToString());
 	}
 
-	/**
-	 * @throws AsisTeam\ISIR\Exception\Runtime\NoRecordFoundException
-	 */
 	public function testCheckEmptyDataError(): void
 	{
 		$client = new InsolvencyCheckerClient(SoapMockHelper::createSoapMock('error_ws2.xml'));
-		$client->checkCompanyById('123456789', true);
+		Assert::null($client->checkCompanyById('123456789', true));
+		Assert::equal([], $client->checkPersonByName('Tomas', 'Sedlacek', true));
 	}
 
 	/**
