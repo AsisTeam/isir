@@ -25,12 +25,12 @@ Client offers you to check if company/person has some insolvency attached or gte
 - checkPersonByNameAndBirth($lastname, $birthday): Insolvency[]
 - checkProceeding($code, $vintage): Insolvency
 
-##### Options param
+##### ActiveOnly param
 
 Every method above has optional parameter `boolean $activeOnly`. When set to true, only currently active insolvencies will be queried.
 Otherwise currently active and/or historical ones will be queried.
 
-##### ActiveOnly param
+##### Options param
 
 `CheckPersonByName`, `checkPersonByNameAndBirth` and `checkCompanyByName` methods have last optional parameter `Options $opts`.
 By passing this object to those methods you can modify, how the remote API will search in its registries.
